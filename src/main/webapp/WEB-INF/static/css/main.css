@@ -1,0 +1,47 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    background: black !important;
+    color: white;
+}
+
+#main-container {
+    padding: 1%;
+    margin: 0;
+}
+
+/*.image-index .image-item {*/
+    /*width: 20%;*/
+    /*background: white;*/
+/*}*/
+
+#image-index {
+    position: relative;
+    padding: 0 5px;
+    margin: 0;
+}
+
+.item-wrapper {
+    max-width: 300px;
+    position: absolute;
+}
+
+/*.item-wrapper .image-wrapper {*/
+    /*height: 100%;*/
+/*}*/
+
+.image {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/*.item-wrapper .mask {*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*background: salmon;*/
+    /*opacity: .5;*/
+
+/*}*/

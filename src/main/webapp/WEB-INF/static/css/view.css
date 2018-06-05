@@ -1,0 +1,45 @@
+.view-container {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+}
+
+#image-container {
+    width: 100%;
+    height: 100%;
+}
+
+.image-panel {
+    display: table;
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.image {
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.page-btn {
+    position: absolute;
+    top: 25vh;
+    bottom: 25vh;
+    width: 15vw;
+    z-index: 9999;
+}
+
+.page-btn.btn-prev {
+    left: 0;
+}
+
+.page-btn.btn-next {
+    right: 0;
+}

@@ -1,19 +1,56 @@
+function templateRenderer(template, param) {
+    return template.replace(/\{\{([^}]+)\}\}/g, function() {
+        var replaceTarget = arguments[1];
+        return param[replaceTarget];
+    }).trim();
+}
+
+function templateListRender(template, list) {
+    var result = [];
+
+    for (var idx in list) {
+        var item = list[idx];
+        result.push(templateRenderer(template, item));
+    }
+
+    return result;
+}
+
+function getItems(template, key, ig) {
+    $.ajax("/api/collection", {
+        method: "GET",
+        success: function(data) {
+            var result = data["result"];
+            var render = templateListRender(template, result);
+            ig.append(render, key);
+            console.log("append invoked");
+        }
+    });
+}
+
 (function($) {
+
     $(document).ready(function(e) {
+        var template = document.getElementById("image-item-template").innerHTML;
         var InfiniteGrid = eg.InfiniteGrid;
-        var GridLayout = InfiniteGrid.GridLayout;
+        var Layout = InfiniteGrid.GridLayout;
 
         var ig = new InfiniteGrid("#image-index", {
             horizontal: false
         });
 
-        ig.setLayout(GridLayout, {
-            margin: 15,
+        ig.setLayout(Layout, {
+            margin: 5,
             align: "center"
         });
 
-        $("#image-index").animate({
-            "height" : "100%"
-        }, 300);
+        ig.on({
+            append: function(e) {
+                getItems(template, e.groupKey + 1, ig);
+            }
+        });
+
+        getItems(template, 0, ig);
+
     });
 })(jQuery);

@@ -9,7 +9,7 @@
     <mvc:annotation-driven />
 
     <bean id="rootImageProvider" class="com.aosamesan.model.RootImageDirectoryProvider">
-        <property name="rootDirectoryPath" value="D:/images/" />
+        <property name="rootDirectoryPath" value="${root.path}" />
     </bean>
 
 </beans>

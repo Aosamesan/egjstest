@@ -7,7 +7,7 @@
     <mvc:annotation-driven />
     <context:property-placeholder location="classpath*:dispatcher.properties" />
     <context:component-scan base-package="com.aosamesan" />
-    <mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
+    <mvc:resources mapping="/static/**" location="/WEB-INF/static/" cache-period="0"/>
     <mvc:resources mapping="/image/**" location="${image.path}" />
 
     <bean id="freemarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
@@ -17,5 +17,9 @@
 
     <bean id="freemarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
         <property name="suffix" value=".ftl" />
+    </bean>
+
+    <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+
     </bean>
 </beans>

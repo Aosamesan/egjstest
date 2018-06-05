@@ -1,10 +1,3 @@
-html,body {
-    margin: 0;
-    padding: 0;
-    background: black !important;
-    color: white;
-}
-
 #main-container {
     padding: 1%;
     margin: 0;
@@ -31,8 +24,37 @@ html,body {
 /*}*/
 
 .image {
-    max-width: 100%;
+    width: 25vw;
     vertical-align: middle;
+}
+
+.image-wrapper .image-desc {
+    background: white;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    display: none;
+    opacity: .7;
+    margin: 0;
+    padding: 0;
+}
+
+.image-wrapper:hover .image-desc {
+    display: inherit;
+}
+
+.image-wrapper .anchor-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.image-desc .description {
+    word-break: break-word;
+    font-weight: bold;
+    margin: 0;
 }
 
 /*.item-wrapper .mask {*/

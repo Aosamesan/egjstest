@@ -13,6 +13,8 @@
 
 .image-panel {
     display: table;
+    width: 100vw;
+    padding: 0 30px;
 }
 
 .image-wrapper {
@@ -24,8 +26,12 @@
 }
 
 .image {
-    max-width: 100vw;
+    max-width: 100%;
     max-height: 100vh;
+}
+
+.layer-top {
+    z-index: 9999;
 }
 
 .page-btn {
@@ -33,7 +39,6 @@
     top: 25vh;
     bottom: 25vh;
     width: 15vw;
-    z-index: 9999;
 }
 
 .page-btn.btn-prev {
@@ -42,4 +47,74 @@
 
 .page-btn.btn-next {
     right: 0;
+}
+
+.image-indicator {
+    position: absolute;
+    width: 50vw;
+    right: 2vw;
+    bottom: 1vh;
+    height: 5vh;
+    background: white;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    display: table;
+    opacity: .7;
+}
+
+.image-indicator .indicator-wrapper {
+    text-align: center;
+    font-size: 2ex;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.image-indicator .btn-back {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10000;
+}
+
+.load-indicator {
+    width: 100vw;
+    height: 100vh;
+    display: table;
+    text-align: center;
+    z-index: 999;
+}
+
+.load-indicator .load-indicator-rotate {
+    position: absolute;
+    top: 40vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 10vw;
+}
+
+.load-indicator-rotate .indicator {
+    display: inline-flex;
+}
+
+.indicator .indicator-description {
+    color: salmon;
+    margin: 0 5vw;
+    font-size: 5vw;
+}
+
+.load-indicator-rotate .rect {
+    width: 100px;
+    height: 100px;
+    padding: 8px;
+}
+
+.indicator-description em {
+    font-style: normal;
+    font-size: 3vw;
 }

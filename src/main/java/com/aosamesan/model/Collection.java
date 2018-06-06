@@ -2,6 +2,7 @@ package com.aosamesan.model;
 
 import com.aosamesan.util.FileComparatorUtil;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.internal.NotNull;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -66,7 +67,7 @@ public class Collection {
         return Collections.emptyList();
     }
 
-    private static boolean isImageFile(File f) {
+    private static boolean isImageFile(@NotNull File f) {
         String path = f.getPath().toLowerCase();
 
         return path.endsWith(".png") || path.endsWith(".jpg") || path.endsWith(".jpeg") || path.endsWith(".gif");

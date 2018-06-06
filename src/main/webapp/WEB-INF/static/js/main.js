@@ -23,7 +23,6 @@ function getItems(template, key, ig) {
             var result = data["result"];
             var render = templateListRender(template, result);
             ig.append(render, key);
-            console.log("append invoked");
         }
     });
 }

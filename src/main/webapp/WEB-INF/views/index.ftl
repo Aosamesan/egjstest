@@ -13,12 +13,12 @@
         <div id="image-index" class="image-index">
         </div>
     </div>
+    <nav class="fixed-bottom">
+        <h1>Foo</h1>
+    </nav>
     <template id="image-item-template" is="auto-binding">
         <div class="image-wrapper">
             <img class="image" src="{{representativeImage}}" alt="{{path}}">
-            <div class="image-desc">
-                <h3 class="description">{{path}}</h3>
-            </div>
             <a href="/view/{{collectionNumber}}" class="anchor-wrapper" title="{{path}}"></a>
         </div>
     </template>
